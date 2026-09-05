@@ -3,6 +3,10 @@
         "/^node --check script\\.js && git diff --check && test -f assets/tazaraiz_main\\.png && test -f assets/taza-raiz_banner\\.jpg && grep -q 'assets/taza-raiz_banner\\.jpg' menu\\.html && grep -q 'assets/tazaraiz_main\\.png' index\\.html && printf 'Validación final correcta\\\\n'$/": {
             "approve": true,
             "matchCommandLine": true
+        },
+        "/^node --check script\\.js && git diff --check && test -f assets/taza-raiz_menu-banner\\.jpg && grep -q 'about-solution' index\\.html && grep -q 'assets/taza-raiz_menu-banner\\.jpg' menu\\.html && printf 'Validación enfocada correcta\\\\n'$/": {
+            "approve": true,
+            "matchCommandLine": true
         }
     }
 }
