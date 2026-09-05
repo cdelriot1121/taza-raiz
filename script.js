@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const triggers = document.querySelectorAll('.trigger-modal');
     const closeBtn = document.getElementById('close-modal');
     const submitBtn = document.getElementById('submit-btn');
+    const waitlistForm = document.getElementById('waitlist-form');
     const emailInput = document.getElementById('email-input');
     const successMsg = document.getElementById('success-msg');
 
@@ -21,9 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('click', (e) => {
         if (e.target === modal) modal.classList.remove('active');
     });
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') modal.classList.remove('active');
+    });
 
-    submitBtn.addEventListener('click', () => {
-        if (emailInput.value.trim() !== '') {
+    waitlistForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (emailInput.checkValidity()) {
             emailInput.style.display = 'none';
             submitBtn.style.display = 'none';
             successMsg.style.display = 'block';
